@@ -12,6 +12,8 @@ class MainActivity : AppCompatActivity() {
 
     var contador = 1
 
+    var mono = 123
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
