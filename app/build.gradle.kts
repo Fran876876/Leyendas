@@ -38,11 +38,17 @@ android {
 dependencies {
 
     // Retrofit & GsonConverterFactory
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
+    //version 2.11.0 hay q ponerle
+    implementation (libs.retrofit)
+    //implementation ("com.squareup.retrofit2:retrofit:2.11.0")  ANTES DE DARLE A REPLACE
+    implementation (libs.converter.gson)
+    //implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
 
-    // Picasso
-    implementation("com.squareup.picasso:picasso:2.8")
+
+    // Picasso 2.8 version q hay q poner
+    //implementation com.squareup.picasso:picasso:(insert latest version)
+
+    implementation(libs.picasso)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

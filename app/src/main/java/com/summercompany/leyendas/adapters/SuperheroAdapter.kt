@@ -1,4 +1,4 @@
-package com.summercompany.leyendas
+package com.summercompany.leyendas.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
+import com.summercompany.leyendas.R
 
 class SuperheroAdapter(var items: List<Superhero>) : Adapter<SuperheroViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SuperheroViewHolder {

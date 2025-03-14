@@ -1,4 +1,4 @@
-package com.summercompany.leyendas
+package com.summercompany.leyendas.activities
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -7,6 +7,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.summercompany.leyendas.R
+import com.summercompany.leyendas.adapters.SuperheroAdapter
+import com.summercompany.leyendas.data.SuperheroService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

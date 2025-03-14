@@ -1,4 +1,4 @@
-package com.summercompany.leyendas
+package com.summercompany.leyendas.data
 
 import retrofit2.http.GET
 import retrofit2.http.Path
