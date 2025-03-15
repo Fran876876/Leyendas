@@ -38,9 +38,10 @@ android {
 dependencies {
 
     // Retrofit & GsonConverterFactory
+    //implementation ("com.squareup.retrofit2:retrofit:2.11.0")  ANTES DE DARLE A REPLACE
     //version 2.11.0 hay q ponerle
     implementation (libs.retrofit)
-    //implementation ("com.squareup.retrofit2:retrofit:2.11.0")  ANTES DE DARLE A REPLACE
+
     implementation (libs.converter.gson)
     //implementation ("com.squareup.retrofit2:converter-gson:2.11.0")
 
