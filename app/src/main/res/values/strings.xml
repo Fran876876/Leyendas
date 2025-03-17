@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Leyendas</string>
 
+
     <string name="action_search">Search</string>
+    <string name="action_biography">Biography</string>
+    <string name="action_appearance">Appearance</string>
+    <string name="action_stats">Stats</string>
 </resources>
