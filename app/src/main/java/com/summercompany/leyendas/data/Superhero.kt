@@ -1,16 +1,18 @@
 package com.summercompany.leyendas.data
 
-import retrofit2.http.GET
-import retrofit2.http.Path
+class SuperheroResponse (
+    val response: String,
+    val results: List<Superhero>
 
-interface SuperheroService {
-
-    @GET("search/{name}")
-    suspend fun findSuperheroesByName(@Path("name") query: String): SuperheroResponse
-
-
-
-    @GET("{superhero-id}")
-    suspend fun findSuperheroById(@Path("superhero-id") id: String): Superhero
+){
 
 }
+
+class Superhero(
+    val id: String,
+    val name: String,
+    val image: Image
+){
+
+}
+class Image (val url: String)
