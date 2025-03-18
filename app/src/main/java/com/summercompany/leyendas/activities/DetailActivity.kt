@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.squareup.picasso.Picasso
 import com.summercompany.leyendas.R
 import com.summercompany.leyendas.data.SuperheroService
 import kotlinx.coroutines.CoroutineScope
@@ -88,10 +89,10 @@ class DetailActivity : AppCompatActivity() {
     }
 
     fun getRetrofit(): SuperheroService {
-        val retrofit = Retrofit.Builder()
+        val retrofit = Retrofit.Builder() // CONSTRUCCION DE OBJETO MEDIANTE PATRON BUILDER
             .baseUrl("https://www.superheroapi.com/api.php/7252591128153666/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+            .addConverterFactory(GsonConverterFactory.create()) // Este método añade un convertidor que permite convertir las respuestas JSON de la API en objetos de Kotlin.
+            .build() // METODO Q CREA EL OBJETO
 
         return retrofit.create(SuperheroService::class.java)
     }

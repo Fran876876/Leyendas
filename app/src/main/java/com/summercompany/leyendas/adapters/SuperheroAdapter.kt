@@ -11,6 +11,7 @@ import com.example.leagueofheroes.R
 import com.example.leagueofheroes.data.Superhero
 import com.example.leagueofheroes.databinding.ItemSuperheroBinding
 import com.squareup.picasso.Picasso
+import com.summercompany.leyendas.data.Superhero
 
 class SuperheroAdapter(var items: List<Superhero>, val onClick: (Int) -> Unit) : Adapter<SuperheroViewHolder>() {
 
