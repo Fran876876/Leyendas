@@ -16,6 +16,9 @@ import com.example.leagueofheroes.adapters.SuperheroAdapter
 import com.example.leagueofheroes.data.Superhero
 import com.example.leagueofheroes.data.SuperheroService
 import com.summercompany.leyendas.R
+import com.summercompany.leyendas.adapters.SuperheroAdapter
+import com.summercompany.leyendas.data.Superhero
+import com.summercompany.leyendas.data.SuperheroService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -33,9 +36,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
+                //Instanciamos AMBinding
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+                // Este mét0do establece el contenido de la
+                //  actividad a la vista raíz del binding que acabas de inflar.
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -43,8 +49,9 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        adapter = SuperheroAdapter(superheroList) { position ->
+        adapter = SuperheroAdapter(superheroList) { position -> //parametro
             val superhero = superheroList[position]
+
 
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("SUPERHERO_ID", superhero.id)

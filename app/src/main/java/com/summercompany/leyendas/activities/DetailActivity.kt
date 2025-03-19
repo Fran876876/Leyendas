@@ -9,7 +9,9 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.squareup.picasso.Picasso
 import com.summercompany.leyendas.R
+import com.summercompany.leyendas.data.Superhero
 import com.summercompany.leyendas.data.SuperheroService
+import com.summercompany.leyendas.databinding.ActivityDetailBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
