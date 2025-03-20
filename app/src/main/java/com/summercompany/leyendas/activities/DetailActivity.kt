@@ -75,25 +75,41 @@ class DetailActivity : AppCompatActivity() {
         binding.biographyContent.publisherTextView.text = superhero.biography.publisher
         binding.biographyContent.placeOfBirthTextView.text = superhero.biography.placeOfBirth
         binding.biographyContent.alignmentTextView.text = superhero.biography.alignment
+        binding.biographyContent.alignmentTextView.setTextColor(getColor(superhero.getAlignmentColor()))
 
         binding.biographyContent.occupationTextView.text = superhero.work.occupation
         binding.biographyContent.baseTextView.text = superhero.work.base
 
         // Appearance
-        binding.appearanceContent.raceTextView.text = superhero.appearance.race
-        binding.appearanceContent.genderTextView.text = superhero.appearance.gender
-        binding.appearanceContent.eyeColorTextView.text = superhero.appearance.eyeColor
-        binding.appearanceContent.hairColorTextView.text = superhero.appearance.hairColor
-        binding.appearanceContent.weightTextView.text = superhero.appearance.getWeightKg()
-        binding.appearanceContent.heightTextView.text = superhero.appearance.getHeightCm()
+        binding.appearanceContent.raceTextView.text = race
+        binding.appearanceContent.genderTextView.text = gender
+        binding.appearanceContent.eyeColorTextView.text = eyeColor
+        binding.appearanceContent.hairColorTextView.text = hairColor
+        binding.appearanceContent.weightTextView.text = getWeightKg()
+        binding.appearanceContent.heightTextView.text = getHeightCm()
 
         // Stats
+        with(superhero.powerstats) {
+            binding.statsContent.intelligenceTextView.text = "${intelligence.toIntOrNull() ?: 0}"
+            binding.statsContent.strengthTextView.text = "${intelligence.toIntOrNull() ?: 0}"
+            binding.statsContent.speedTextView.text = "${intelligence.toIntOrNull() ?: 0}"
+            binding.statsContent.durabilityTextView.text = "${intelligence.toIntOrNull() ?: 0}"
+            binding.statsContent.powerTextView.text = "${intelligence.toIntOrNull() ?: 0}"
+            binding.statsContent.combatTextView.text = "${intelligence.toIntOrNull() ?: 0}"
+
+            binding.statsContent.intelligenceProgressBar.progress = intelligence.toIntOrNull() ?: 0
+            binding.statsContent.strenghtProgressBar.progress = intelligence.toIntOrNull() ?: 0
+            binding.statsContent.speedProgressBar.progress = intelligence.toIntOrNull() ?: 0
+            binding.statsContent.durabilityProgressBar.progress = intelligence.toIntOrNull() ?: 0
+            binding.statsContent.powerProgressBar.progress = intelligence.toIntOrNull() ?: 0
+            binding.statsContent.combatProgressBar.progress = intelligence.toIntOrNull() ?: 0
+        }
     }
 
     fun getRetrofit(): SuperheroService {
         val retrofit = Retrofit.Builder() // CONSTRUCCION DE OBJETO MEDIANTE PATRON BUILDER
             .baseUrl("https://www.superheroapi.com/api.php/7252591128153666/")
-            .addConverterFactory(GsonConverterFactory.create()) // Este método añade un convertidor que permite convertir las respuestas JSON de la API en objetos de Kotlin.
+            .addConverterFactory(GsonConverterFactory.create()) // Este mét0do añade un convertidor que permite convertir las respuestas JSON de la API en objetos de Kotlin.
             .build() // METODO Q CREA EL OBJETO
 
         return retrofit.create(SuperheroService::class.java)

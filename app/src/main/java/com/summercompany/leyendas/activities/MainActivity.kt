@@ -10,15 +10,11 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.leagueofheroes.R
-import com.example.leagueofheroes.adapters.SuperheroAdapter
-import com.example.leagueofheroes.data.Superhero
-import com.example.leagueofheroes.data.SuperheroService
 import com.summercompany.leyendas.R
 import com.summercompany.leyendas.adapters.SuperheroAdapter
 import com.summercompany.leyendas.data.Superhero
 import com.summercompany.leyendas.data.SuperheroService
+import com.summercompany.leyendas.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -47,15 +43,18 @@ class MainActivity : AppCompatActivity() {
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
+
+
         }
 
         adapter = SuperheroAdapter(superheroList) { position -> //parametro
             val superhero = superheroList[position]
 
-
             val intent = Intent(this, DetailActivity::class.java)
             intent.putExtra("SUPERHERO_ID", superhero.id)
             startActivity(intent)
+
+
         }
 
         binding.recyclerView.adapter = adapter

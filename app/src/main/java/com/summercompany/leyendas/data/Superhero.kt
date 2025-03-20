@@ -1,6 +1,7 @@
 package com.summercompany.leyendas.data
 
 import com.google.gson.annotations.SerializedName
+import com.summercompany.leyendas.R
 
 class SuperheroResponse (
     val response: String,
@@ -13,8 +14,19 @@ class Superhero (
     val biography: Biography,
     val work: Work,
     val appearance: Appearance,
+    val powerstats: Stats,
     val image: Image
-)
+) {
+    fun getAlignmentColor(): Int{
+        return when (biography.alignment){
+            "good" -> R.color.alignment_color_good
+            "bad" -> R.color.alignment_color_bad
+            else -> R.color.alignment_color_neutral
+        }
+    }
+
+
+}
 
 class Biography (
     val publisher: String,
@@ -28,7 +40,7 @@ class Work (
     val base: String
 )
 
-class Appearance (
+ class Appearance (
     val gender: String,
     val race: String,
     @SerializedName("eye-color") val eyeColor: String,
@@ -44,5 +56,14 @@ class Appearance (
         return height[1]
     }
 }
+
+class Stats(
+    val intelligence: String,
+    val strenght: String,
+    val speed: String,
+    val durability: String,
+    val power: String,
+    val combat: String
+)
 
 class Image (val url: String)
