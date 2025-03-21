@@ -81,13 +81,14 @@ class DetailActivity : AppCompatActivity() {
         binding.biographyContent.baseTextView.text = superhero.work.base
 
         // Appearance
+        with(superhero.appearance){
         binding.appearanceContent.raceTextView.text = race
         binding.appearanceContent.genderTextView.text = gender
         binding.appearanceContent.eyeColorTextView.text = eyeColor
         binding.appearanceContent.hairColorTextView.text = hairColor
         binding.appearanceContent.weightTextView.text = getWeightKg()
         binding.appearanceContent.heightTextView.text = getHeightCm()
-
+        }
         // Stats
         with(superhero.powerstats) {
             binding.statsContent.intelligenceTextView.text = "${intelligence.toIntOrNull() ?: 0}"
